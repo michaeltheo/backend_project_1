@@ -84,7 +84,7 @@ const genres=[
              return;    
         }
     
-        const {error}=validateMovies(req.body);
+        const {error}=validateGengre(req.body);
         if(error){
             return res.status(400).send(error.details[0].message);
         }
@@ -139,7 +139,7 @@ function validateMovies(movie){
     return Joi.validate(movie,schema);
 }
 
-function validateGenge(genre){
+function validateGengre(genre){
     const schema={
         name: Joi.string().min(2).required()
     };
